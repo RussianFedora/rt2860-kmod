@@ -1,0 +1,42 @@
+diff -rupN 2010_07_16_RT2860_Linux_STA_v2.4.0.0.old/common/cmm_asic.c 2010_07_16_RT2860_Linux_STA_v2.4.0.0/common/cmm_asic.c
+--- 2010_07_16_RT2860_Linux_STA_v2.4.0.0.old/common/cmm_asic.c	2010-07-08 07:30:47.000000000 -0400
++++ 2010_07_16_RT2860_Linux_STA_v2.4.0.0/common/cmm_asic.c	2010-08-29 16:31:58.000000000 -0400
+@@ -934,7 +934,7 @@ VOID AsicSwitchChannel(
+ //								TxPwer = (TxPwer > 0xF) ? (0xF) : (TxPwer);
+ 
+ 								R3 |= (TxPwer << 10);
+-								DBGPRINT(RT_DEBUG_ERROR, ("AsicSwitchChannel: TxPwer=%d \n", TxPwer));
++								// comment out as it causes flood // DBGPRINT(RT_DEBUG_ERROR, ("AsicSwitchChannel: TxPwer=%d \n", TxPwer));
+ 							}
+ 							else
+ 							{
+@@ -948,7 +948,7 @@ VOID AsicSwitchChannel(
+ 								TxPwer2 = (7+TxPwer2);
+ 								TxPwer2 = (TxPwer2 > 0xF) ? (0xF) : (TxPwer2);
+ 								R4 |= (TxPwer2 << 7);
+-								DBGPRINT(RT_DEBUG_ERROR, ("AsicSwitchChannel: TxPwer2=%d \n", TxPwer2));
++								// comment out as it causes flood // DBGPRINT(RT_DEBUG_ERROR, ("AsicSwitchChannel: TxPwer2=%d \n", TxPwer2));
+ 							}
+ 							else
+ 							{
+diff -rupN 2010_07_16_RT2860_Linux_STA_v2.4.0.0.old/common/rt_ate.c 2010_07_16_RT2860_Linux_STA_v2.4.0.0/common/rt_ate.c
+--- 2010_07_16_RT2860_Linux_STA_v2.4.0.0.old/common/rt_ate.c	2010-07-08 07:43:17.000000000 -0400
++++ 2010_07_16_RT2860_Linux_STA_v2.4.0.0/common/rt_ate.c	2010-08-29 16:36:18.000000000 -0400
+@@ -4512,7 +4512,7 @@ VOID ATEAsicSwitchChannel(
+ 								TxPwer = (7+TxPwer);
+ 								TxPwer = (TxPwer > 0xF) ? (0xF) : (TxPwer);
+ 								R3 |= (TxPwer << 10);
+-								DBGPRINT(RT_DEBUG_TRACE, ("ATEAsicSwitchChannel: TxPwer=%d \n", TxPwer));
++								// comment out as it causes flood // DBGPRINT(RT_DEBUG_TRACE, ("ATEAsicSwitchChannel: TxPwer=%d \n", TxPwer));
+ 							}
+ 							else
+ 							{
+@@ -4526,7 +4526,7 @@ VOID ATEAsicSwitchChannel(
+ 								TxPwer2 = (7+TxPwer2);
+ 								TxPwer2 = (TxPwer2 > 0xF) ? (0xF) : (TxPwer2);
+ 								R4 |= (TxPwer2 << 7);
+-								DBGPRINT(RT_DEBUG_TRACE, ("ATEAsicSwitchChannel: TxPwer2=%d \n", TxPwer2));
++								// comment out as it causes flood // DBGPRINT(RT_DEBUG_TRACE, ("ATEAsicSwitchChannel: TxPwer2=%d \n", TxPwer2));
+ 							}
+ 							else
+ 							{
